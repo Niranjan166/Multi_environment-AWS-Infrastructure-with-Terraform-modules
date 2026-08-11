@@ -3,8 +3,8 @@ terraform {
 
   required_providers {
     aws = {
-        source = "hashicorp/aws"
-        version = "= 5.31.0"
+      source  = "hashicorp/aws"
+      version = "= 5.31.0"
     }
   }
 }
@@ -14,10 +14,10 @@ provider "aws" {
 
   default_tags {
     tags = {
-      Project = var.project_name
+      Project     = var.project_name
       Environment = var.environment
-      ManagedBy = "Terraform"
-      Owner = "nkapp-team"
+      ManagedBy   = "Terraform"
+      Owner       = "nkapp-team"
     }
   }
 }
