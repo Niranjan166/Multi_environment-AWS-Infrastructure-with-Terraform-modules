@@ -1,0 +1,31 @@
+project_name = "nkapp"
+environment  = "dev"
+aws_region   = "us-east-1"
+
+# ---------------- VPC ------------------
+vpc_cidr = "10.0.0.0/16"
+az_count = 2
+
+# ---------------- EC2 ------------------
+instance_type    = "t2.micro"
+min_size         = 1
+max_size         = 2
+desired_capacity = 1
+
+# ---------------- RDS ------------------
+db_instance_class       = "db.t3.micro"
+allocated_storage       = 20
+multi_az                = false
+backup_retention_period = 1
+db_name                 = "nkappdb"
+db_username             = "admin"
+deletion_protection     = false
+skip_final_snapshot     = true
+
+# ---------------- S3 ------------------
+versioning_enabled = false
+lifecycle_days     = 30
+
+# ---------------- CloudWatch ------------------
+log_retention_days = 7
+cpu_threshold      = 80
