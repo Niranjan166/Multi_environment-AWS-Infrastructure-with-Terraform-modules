@@ -47,7 +47,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan -var-file=dev.tfvars
+        run: terraform plan
         env:
           TF_VAR_db_password: ${{ secrets.DEV_DB_PASSWORD }}
           TF_VAR_alert_email: ${{ secrets.DEV_ALERT_EMAIL }}
@@ -57,3 +57,4 @@ jobs:
         run: terraform apply -auto-approve -var-file=dev.tfvars
         env:
           TF_VAR_db_password: ${{ secrets.DEV_DB_PASSWORD }}
+          TF_VAR_alert_email: ${{ secrets.DEV_ALERT_EMAIL }}

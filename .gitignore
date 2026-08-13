@@ -12,7 +12,9 @@
  
 # ── Variable Files (contain sensitive values) ──────────
 *.tfvars
-!*.tfvars.example
+!environment/dev/dev/*.tfvars
+!environment/staging/staging/*.tfvars
+!environment/prod/prod/*.tfvars
  
 # ── Crash Logs ─────────────────────────────────────────
 crash.log
