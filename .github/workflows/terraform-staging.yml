@@ -2,7 +2,7 @@ name: Terraform Staging
 
 on:
   workflow_dispatch:
-  
+
   push:
     branches:
       - staging
@@ -54,6 +54,18 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
-        run: terraform apply -auto-approve -var-file=staging.tfvars
+        run: |
+         echo "Checking alert email secret..."
+         if [ -z "$TF_VAR_alert_email" ]; then
+            echo "Error: STAGING_ALERT_EMAIL secret is not AVAILABLE."
+            exit 1
+
+          else
+            echo "staging alert available"
+          fi
+
+          terraform apply -auto-approve -var-file=staging.tfvars
         env:
           TF_VAR_db_password: ${{ secrets.STAGING_DB_PASSWORD }}
+          TF_VAR_alert_email: ${{ secrets.STAGING_ALERT_EMAIL }}
+      
