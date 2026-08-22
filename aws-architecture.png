@@ -1,5 +1,0 @@
-## AWS Architecture
-
-![AWS Architecture](images/aws-architecture.png)
-
-This architecture represents the complete multi-environment infrastructure provisioned using Terraform modules on AWS.
