@@ -364,3 +364,15 @@ Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 ```
 
 This project demonstrates practical Infrastructure as Code implementation, AWS networking, compute, database provisioning, monitoring, remote state management, and CI/CD automation using Terraform.
+
+## AWS Architecture
+
+![AWS Architecture](images/aws-architecture.png)
+
+## GitHub Actions Pipeline
+
+![GitHub Actions Success](images/github-actions-success.png)
+
+## AWS Resources Created
+
+![AWS Resources Dashboard](images/aws-resources-dashboard.png)
